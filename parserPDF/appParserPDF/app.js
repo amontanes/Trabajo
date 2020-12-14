@@ -10,12 +10,12 @@ const FormData = require('form-data');
 
 const app = express();
 
-const services = xsenv.getServices({ uaa: 'ParserPDFUAA' });
+//const services = xsenv.getServices({ uaa: 'ParserPDFUAA' });
 
-passport.use(new JWTStrategy(services.uaa));
+//passport.use(new JWTStrategy(services.uaa));
 
 app.use(passport.initialize());
-app.use(passport.authenticate('JWT', { session: false }));
+//app.use(passport.authenticate('JWT', { session: false }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -160,11 +160,9 @@ app.use(function(req, res, next) {
     };
     res.status(404).send(respuesta);
    });
-   app.listen(8080, () => {
+   app.listen(3000, () => {
     console.log("El servidor está inicializado en el puerto 8080");
    });
-
-
 
     function mappingReqToContext(req){
             var partner = req.body.E_PARTNER;
@@ -180,16 +178,20 @@ app.use(function(req, res, next) {
             account.ZZTOT_OTROS_IMP = formatAmount(account.ZZTOT_OTROS_IMP);
             account.ZZTOT_GRAL      = formatAmount(account.ZZTOT_GRAL);                                                        
 
-            
-            var t_det_xblnr = convertArray(req.body.T_DET_XBLNR.item);
+            if (req.body.T_DET_XBLNR != '')
+            {
+                var t_det_xblnr = convertArray(req.body.T_DET_XBLNR.item);
+            }
             var t_sub_total = convertArray(req.body.T_SUB_TOTAL.item);
             var leyenda_pie = convertArray(req.body.I_LEYENDA_PIE.item);
 
-            var items_gastos   = getItems('GASTOS',         t_det_xblnr, t_sub_total);
-            var items_cuotas   = getItems('CUOTAS',         t_det_xblnr, t_sub_total);
-            var items_facturas = getItems('FACTURA / ND',   t_det_xblnr, t_sub_total);
-            var items_creditos = getItems('CRÉDITOS',       t_det_xblnr, t_sub_total);
-
+            if (req.body.T_DET_XBLNR != '')
+            {
+                var items_gastos   = getItems('GASTOS',         t_det_xblnr, t_sub_total);
+                var items_cuotas   = getItems('CUOTAS',         t_det_xblnr, t_sub_total);
+                var items_facturas = getItems('FACTURA / ND',   t_det_xblnr, t_sub_total);
+                var items_creditos = getItems('CRÉDITOS',       t_det_xblnr, t_sub_total);
+            }
             return  {
                 date:           date,
                 partner:        partner,
