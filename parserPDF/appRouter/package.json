@@ -1,0 +1,13 @@
+{
+  "name": "approuter",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/approuter.js"
+  },
+  "author": "Baitcon",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/approuter": "^8.5.2"
+  }
+}

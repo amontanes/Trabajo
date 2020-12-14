@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {
+      "source": "^/ParserPDF/(.*)$",
+      "target": "$1",
+      "destination": "ParserPDF"
+    }
+  ]
+}
