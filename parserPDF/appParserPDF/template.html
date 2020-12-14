@@ -1,0 +1,369 @@
+<style type="text/css">
+
+    .table1 {  
+            border: 1px solid black;
+            background-color: lightgray;
+            margin-top: 5px;
+            }
+    .table1 td{
+            font-family:Arial, sans-serif;
+            font-size:10px;
+            overflow:hidden;
+            padding:1px 3px;
+            word-break:normal;
+            }
+    .tg  {  
+            border-collapse:collapse;
+            border-spacing:0;
+            margin-top: 5px;
+            table-layout:fixed;
+            }
+    
+    .tabletop{
+      border: 0px;
+      width: 1000px;
+      font-family:Arial, sans-serif;
+      font-size:11px;
+
+    }
+
+    .tg .tdtitle{ 
+            border-color:black;
+            border-style:solid;
+            background-color: lightgray;
+            border-width:1px;
+            font-family:Arial, sans-serif;
+            font-size:10px;
+            overflow:hidden;
+            padding:2px 2px;
+            word-break:normal;
+            }
+    .tg .tdsimple{ 
+            border-color:black;
+            border-style:solid;
+            border-width:1px;
+            font-family:Arial, sans-serif;
+            font-size:10px;
+            overflow:hidden;
+            padding:2px 2px;
+            word-break:normal;
+            white-space:pre;
+            vertical-align: middle;
+            }            
+    .tdright{
+      text-align:right;
+    }
+    .tddynamic{
+      font-size:8px;
+    }
+
+    tr{
+
+    }
+
+    .tdbreak{
+      border-right:1px transparent;
+      border-left:1px transparent;
+    }
+
+    .tdcenter{
+      text-align:center;
+    }
+    .tg td{ 
+            
+            border-style:solid;
+            border-width:1px;
+            font-family:Arial, sans-serif;
+            font-size:10px;
+            overflow:hidden;
+            padding:10px 5px;
+            word-break:normal;
+            
+            }
+
+    #pageFooter:after {
+            counter-increment: page;
+            content: counter(page);
+            }
+    </style>
+
+<table class="tabletop" width=800px>
+    <tr>
+      <td width= 100px rowspan="3"><div></div><img  width="50" height="50" src="data:image/png;base64,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"/></div></td>
+      <td class="tdcenter" width= 700px rowspan="3">ESTADO DE CUENTA <br>Detalle por CUENTA CONTRATO</td>
+      <td class="tddynamic" width= 40px >Fecha:</th>
+      <td class="tddynamic" width= 40px >{{date.fecha}}</th>
+    </tr>
+    <tr>
+      <td class="tddynamic">Hora:</td>
+      <td class="tddynamic">{{date.hora}}</td>
+    </tr>
+    <tr>
+      <td class="tddynamic">
+        
+      </td>
+    </tr>
+  </table>
+
+
+<table class="table1">
+      <tr>
+        <td width="150px">Número de interlocutor</td>
+        <td width="700px">{{partner.GPART}}</td>
+      </tr>
+      <tr>
+        <td width="150px">Nombre de interlocutor</td>
+        <td width="700px">{{partner.NAME_ORG1}}</td>
+      </tr>
+      <tr>
+        <td width="150px">Dirección postal</td>
+        <td width="700px">{{partner.ZZDIRECCION}}</td>
+      </tr>
+      <tr>
+        <td width="150px"></td>
+        <td width="700px">{{partner.ZZDIRECCION2}}</td>
+      </tr>
+    </tbody>
+    </table>
+
+<table class="tg">
+  <tr>
+    <td width="150px" class="tdtitle td">Cuenta Contrato </td>
+    <td width="200px" class="tdtitle td">Nombre Cuenta Contrato</td>
+    <td width="550px" class="tdtitle td"colspan="3">Dirección inmueble</td>
+    <td width="200px" class="tdtitle td">Saldo Cuenta</th>
+  </tr>
+  <tr>
+    <td width="150px">{{account.VKONT}}</td>
+    <td width="200px">{{account.VKBEZ}}</td>
+    <td width="550px" colspan="3">{{account.ZZDIRECCION}}</td>
+    <td width="200px">$ {{account.ZZSALDO_CTA}}</td>
+  </tr>
+  <tr>
+    <td width="150px" class="tdtitle">Categoría</td>
+    <td width="550px" class="tdtitle" colspan="2">Condición IVA</td>
+    <td width="100px" class="tdtitle">Número CUIT</td>
+    <td width="100px" class="tdtitle">Condición IIBB</td>
+    <td width="200px" class="tdtitle">Estado de Servicio</td>
+  </tr>
+  <tr>
+    <td width="150px">{{account.KTOTX}}</td>
+    <td width="550px" colspan="2">{{account.ZZIVA}}</td>
+    <td width="100px">{{account.ZZCUIT}}</td>
+    <td width="100px">{{account.ZZING_BRUTOS}}</td>
+    <td width="200px">{{account.ZZEST_SERVICIO}}</td>
+  </tr>
+</table>
+
+<table class="tg">
+  {{#if items_facturas.exist}}  
+      <tr>
+        <td width=150px class="tdtitle">Nro. Doc.</td>
+        <td width=250px class="tdtitle">Descripción</td>
+        <td width=70px  class="tdtitle">Fec emis</td>
+        <td width=70px  class="tdtitle">Fec 1vto</td>
+        <td width=40px  class="tdtitle">NR</td>
+        <td width=70px  class="tdtitle">Nro Cert</td>
+        <td width=75px  class="tdtitle">Imp orig</td>
+        <td width=75px  class="tdtitle">Int/Rec</td>
+        <td width=75px  class="tdtitle">Rec AJ/EJ</td>
+        <td width=75px  class="tdtitle">IVA/RNI</td>
+        <td width=75px  class="tdtitle">Otro imp</td>
+        <td width=75px  class="tdtitle">Imp Total</td>
+      </tr>
+      <tr>
+        <td class="tdtitle" colspan="12">FACTURA/ND</td>
+      </tr>
+        {{#each items_facturas.items}}
+        <tr>
+          <td width=150px class="tdsimple">{{this.XBLNR}}</td>
+          <td width=250px class="tdsimple">{{this.OPTXT}}</td>
+          <td width=70px class="tdsimple">{{this.BLDAT}}</td>
+          <td width=70px class="tdsimple">{{this.FAEDN}}</td>
+          <td width=40px class="tdsimple">{{this.MWSKZ}}</td>
+          <td width=70px class="tdsimple">{{this.ZZCDEUDA}}</td>
+          <td width=75px class="tdsimple tdright">{{this.ZZTOT_ORIGINAL}}</td>
+          <td width=75px class="tdsimple tdright">{{this.ZZTOT_INT_REC}}</td>
+          <td width=75px class="tdsimple tdright">{{this.ZZTOT_AC_JUD}}</td>
+          <td width=75px class="tdsimple tdright">{{this.ZZTOT_IVA}}</td>
+          <td width=75px class="tdsimple tdright">{{this.ZZTOT_OTROS_IMP}}</td>
+          <td width=75px class="tdsimple tdright">{{this.ZZTOT_GRAL}}</td>
+        </tr>
+        {{/each}}
+        <tr>
+          <td width=650px class="tdtitle" colspan="6">Subtotal FACTURA/ND</td>
+          <td width=75px class="tdtitle tdright">{{items_facturas.sub_total.ZZTOT_ORIGINAL}}</td>
+          <td width=75px class="tdtitle tdright">{{items_facturas.sub_total.ZZTOT_INT_REC}}</td>
+          <td width=75px class="tdtitle tdright">{{items_facturas.sub_total.ZZTOT_AC_JUD}}</td>
+          <td width=75px class="tdtitle tdright">{{items_facturas.sub_total.ZZTOT_IVA}}</td>
+          <td width=75px class="tdtitle tdright">{{items_facturas.sub_total.ZZTOT_OTROS_IMP}}</td>
+          <td width=75px class="tdtitle tdright">{{items_facturas.sub_total.ZZTOT_GRAL}}</td>
+        </tr>
+        <tr><td colspan=12 class="tdbreak"></td></tr>
+        {{/if}}
+
+        {{#if items_creditos.exist}}  
+        <tr>
+          <td width=150px class="tdtitle">Nro. Doc.</td>
+          <td width=250px class="tdtitle">Descripción</td>
+          <td width=70px  class="tdtitle">Fec emis</td>
+          <td width=70px  class="tdtitle">Fec 1vto</td>
+          <td width=40px  class="tdtitle">NR</td>
+          <td width=70px  class="tdtitle">Nro Cert</td>
+          <td width=75px  class="tdtitle">Imp orig</td>
+          <td width=75px  class="tdtitle">Int/Rec</td>
+          <td width=75px  class="tdtitle">Rec AJ/EJ</td>
+          <td width=75px  class="tdtitle">IVA/RNI</td>
+          <td width=75px  class="tdtitle">Otro imp</td>
+          <td width=75px  class="tdtitle">Imp Total</td>
+        </tr>
+        <tr>
+          <td class="tdtitle" colspan="12">CRÉDITOS</td>
+        </tr>
+          {{#each items_creditos.items}}
+          <tr>
+            <td width=150px class="tdsimple">{{this.XBLNR}}</td>
+            <td width=250px class="tdsimple">{{this.OPTXT}}</td>
+            <td width=70px class="tdsimple">{{this.BLDAT}}</td>
+            <td width=70px class="tdsimple">{{this.FAEDN}}</td>
+            <td width=40px class="tdsimple">{{this.MWSKZ}}</td>
+            <td width=70px class="tdsimple">{{this.ZZCDEUDA}}</td>
+            <td width=75px class="tdsimple tdright">{{this.ZZTOT_ORIGINAL}}</td>
+            <td width=75px class="tdsimple tdright">{{this.ZZTOT_INT_REC}}</td>
+            <td width=75px class="tdsimple tdright">{{this.ZZTOT_AC_JUD}}</td>
+            <td width=75px class="tdsimple tdright">{{this.ZZTOT_IVA}}</td>
+            <td width=75px class="tdsimple tdright">{{this.ZZTOT_OTROS_IMP}}</td>
+            <td width=75px class="tdsimple tdright">{{this.ZZTOT_GRAL}}</td>
+          </tr>
+          {{/each}}
+          <tr>
+            <td width=650px class="tdtitle" colspan="6">Subtotal CRÉDITOS</td>
+            <td width=75px class="tdtitle tdright">{{items_creditos.sub_total.ZZTOT_ORIGINAL}}</td>
+            <td width=75px class="tdtitle tdright">{{items_creditos.sub_total.ZZTOT_INT_REC}}</td>
+            <td width=75px class="tdtitle tdright">{{items_creditos.sub_total.ZZTOT_AC_JUD}}</td>
+            <td width=75px class="tdtitle tdright">{{items_creditos.sub_total.ZZTOT_IVA}}</td>
+            <td width=75px class="tdtitle tdright">{{items_creditos.sub_total.ZZTOT_OTROS_IMP}}</td>
+            <td width=75px class="tdtitle tdright">{{items_creditos.sub_total.ZZTOT_GRAL}}</td>
+          </tr>
+          <tr><td colspan=12 class="tdbreak"></td></tr>
+          {{/if}}
+          
+
+          {{#if items_gastos.exist}}  
+          <tr>
+            <td width=150px class="tdtitle">Nro. Doc.</td>
+            <td width=250px class="tdtitle">Descripción</td>
+            <td width=70px  class="tdtitle">Fec emis</td>
+            <td width=70px  class="tdtitle">Fec 1vto</td>
+            <td width=40px  class="tdtitle">NR</td>
+            <td width=70px  class="tdtitle">Nro Cert</td>
+            <td width=75px  class="tdtitle">Imp orig</td>
+            <td width=75px  class="tdtitle">Int/Rec</td>
+            <td width=75px  class="tdtitle">Rec AJ/EJ</td>
+            <td width=75px  class="tdtitle">IVA/RNI</td>
+            <td width=75px  class="tdtitle">Otro imp</td>
+            <td width=75px  class="tdtitle">Imp Total</td>
+          </tr>
+          <tr>
+            <td class="tdtitle" colspan="12">GASTOS</td>
+          </tr>
+            {{#each items_gastos.items}}
+            <tr>
+              <td width=150px class="tdsimple">{{this.XBLNR}}</td>
+              <td width=250px class="tdsimple">{{this.OPTXT}}</td>
+              <td width=70px class="tdsimple">{{this.BLDAT}}</td>
+              <td width=70px class="tdsimple">{{this.FAEDN}}</td>
+              <td width=40px class="tdsimple">{{this.MWSKZ}}</td>
+              <td width=70px class="tdsimple">{{this.ZZCDEUDA}}</td>
+              <td width=75px class="tdsimple tdright">{{this.ZZTOT_ORIGINAL}}</td>
+              <td width=75px class="tdsimple tdright">{{this.ZZTOT_INT_REC}}</td>
+              <td width=75px class="tdsimple tdright">{{this.ZZTOT_AC_JUD}}</td>
+              <td width=75px class="tdsimple tdright">{{this.ZZTOT_IVA}}</td>
+              <td width=75px class="tdsimple tdright">{{this.ZZTOT_OTROS_IMP}}</td>
+              <td width=75px class="tdsimple tdright">{{this.ZZTOT_GRAL}}</td>
+            </tr>
+            {{/each}}
+            <tr>
+              <td width=650px class="tdtitle" colspan="6">Subtotal GASTOS</td>
+              <td width=75px class="tdtitle tdright">{{items_gastos.sub_total.ZZTOT_ORIGINAL}}</td>
+              <td width=75px class="tdtitle tdright">{{items_gastos.sub_total.ZZTOT_INT_REC}}</td>
+              <td width=75px class="tdtitle tdright">{{items_gastos.sub_total.ZZTOT_AC_JUD}}</td>
+              <td width=75px class="tdtitle tdright">{{items_gastos.sub_total.ZZTOT_IVA}}</td>
+              <td width=75px class="tdtitle tdright">{{items_gastos.sub_total.ZZTOT_OTROS_IMP}}</td>
+              <td width=75px class="tdtitle tdright">{{items_gastos.sub_total.ZZTOT_GRAL}}</td>
+            </tr>
+            <tr><td colspan=12 class="tdbreak"></td></tr>
+            {{/if}}
+
+            {{#if items_cuotas.exist}}  
+            <tr>
+              <td width=150px class="tdtitle">Nro. Doc.</td>
+              <td width=250px class="tdtitle">Descripción</td>
+              <td width=70px  class="tdtitle">Fec emis</td>
+              <td width=70px  class="tdtitle">Fec 1vto</td>
+              <td width=40px  class="tdtitle">NR</td>
+              <td width=70px  class="tdtitle">Nro Cert</td>
+              <td width=75px  class="tdtitle">Imp orig</td>
+              <td width=75px  class="tdtitle">Int/Rec</td>
+              <td width=75px  class="tdtitle">Rec AJ/EJ</td>
+              <td width=75px  class="tdtitle">IVA/RNI</td>
+              <td width=75px  class="tdtitle">Otro imp</td>
+              <td width=75px  class="tdtitle">Imp Total</td>
+            </tr>
+            <tr>
+              <td class="tdtitle" colspan="12">CUOTAS</td>
+            </tr>
+              {{#each items_cuotas.items}}
+              <tr>
+                <td width=150px class="tdsimple">{{this.XBLNR}}</td>
+                <td width=250px class="tdsimple">{{this.OPTXT}}</td>
+                <td width=70px class="tdsimple">{{this.BLDAT}}</td>
+                <td width=70px class="tdsimple">{{this.FAEDN}}</td>
+                <td width=40px class="tdsimple">{{this.MWSKZ}}</td>
+                <td width=70px class="tdsimple">{{this.ZZCDEUDA}}</td>
+                <td width=75px class="tdsimple tdright">{{this.ZZTOT_ORIGINAL}}</td>
+                <td width=75px class="tdsimple tdright">{{this.ZZTOT_INT_REC}}</td>
+                <td width=75px class="tdsimple tdright">{{this.ZZTOT_AC_JUD}}</td>
+                <td width=75px class="tdsimple tdright">{{this.ZZTOT_IVA}}</td>
+                <td width=75px class="tdsimple tdright">{{this.ZZTOT_OTROS_IMP}}</td>
+                <td width=75px class="tdsimple tdright">{{this.ZZTOT_GRAL}}</td>
+              </tr>
+              {{/each}}
+              <tr>
+                <td width=650px class="tdtitle" colspan="6">Subtotal CUOTAS</td>
+                <td width=75px class="tdtitle tdright">{{items_cuotas.sub_total.ZZTOT_ORIGINAL}}</td>
+                <td width=75px class="tdtitle tdright">{{items_cuotas.sub_total.ZZTOT_INT_REC}}</td>
+                <td width=75px class="tdtitle tdright">{{items_cuotas.sub_total.ZZTOT_AC_JUD}}</td>
+                <td width=75px class="tdtitle tdright">{{items_cuotas.sub_total.ZZTOT_IVA}}</td>
+                <td width=75px class="tdtitle tdright">{{items_cuotas.sub_total.ZZTOT_OTROS_IMP}}</td>
+                <td width=75px class="tdtitle tdright">{{items_cuotas.sub_total.ZZTOT_GRAL}}</td>
+              </tr>
+              <tr><td colspan=12 class="tdbreak"></td></tr>
+              {{/if}}            
+                      
+        <tr>
+          <td colspan="6" class="tdsimple">SALDO DE CUENTA: {{account.VKONT}}</td>
+          <td width=75px class="tdsimple tdright">{{account.ZZTOT_ORIGINAL}}</td>
+          <td width=75px class="tdsimple tdright">{{account.ZZTOT_INT_REC}}</td>
+          <td width=75px class="tdsimple tdright">{{account.ZZTOT_AC_JUD}}</td>
+          <td width=75px class="tdsimple tdright">{{account.ZZTOT_IVA}}</td>
+          <td width=75px class="tdsimple tdright">{{account.ZZTOT_OTROS_IMP}}</td>
+          <td width=75px class="tdsimple tdright">{{account.ZZTOT_GRAL}}</td>
+        </tr>
+    </table>
+    
+    <br>
+    <br>
+    <table class="tabletop">
+      {{#each leyenda_pie}}
+      <tr>
+        <td width=200px> </td>
+        <td class="tddynamic">
+          {{this.TEXTO}}
+        </td>
+      </tr>
+      {{/each}}
+    </table>
+
+
+

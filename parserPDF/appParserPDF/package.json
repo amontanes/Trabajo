@@ -1,0 +1,22 @@
+{
+  "name": "parserpdf",
+  "version": "1.0.0",
+  "description": "json to pdf",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "baitcon",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/xsenv": "^3.0.0",
+    "@sap/xssec": "^3.0.9",
+    "body-parser": "^1.19.0",
+    "dynamic-html-pdf": "^1.0.2",
+    "express": "^4.17.1",
+    "form-data": "^3.0.0",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
+    "passport": "^0.4.1"
+  }
+}

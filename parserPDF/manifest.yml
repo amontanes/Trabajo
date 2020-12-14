@@ -1,0 +1,25 @@
+---
+applications:
+- name: appParserPDF
+  routes:
+  - route: aysa-parserpdf.cfapps.eu10.hana.ondemand.com  
+  path: appParserPDF
+  memory: 256M
+  services:
+   - ParserPDFUAA
+- name: appRouterParserPDF
+  routes:
+  - route: approuter-aysa-parserpdf.cfapps.eu10.hana.ondemand.com
+  path: appRouter
+  memory: 256M
+  env:
+    destinations: >
+      [
+        {
+          "name":"ParserPDF",
+          "url":"https://aysa-parserpdf.cfapps.eu10.hana.ondemand.com",
+          "forwardAuthToken": true
+        }
+      ]
+  services:
+    - ParserPDFUAA   
