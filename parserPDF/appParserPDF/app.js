@@ -160,7 +160,7 @@ app.use(function(req, res, next) {
     };
     res.status(404).send(respuesta);
    });
-   app.listen(3000, () => {
+   app.listen(8080, () => {
     console.log("El servidor está inicializado en el puerto 8080");
    });
 
@@ -218,7 +218,12 @@ app.use(function(req, res, next) {
                 item.ZZTOT_IVA       = formatAmount(item.ZZTOT_IVA);
                 item.ZZTOT_OTROS_IMP = formatAmount(item.ZZTOT_OTROS_IMP);
                 item.ZZTOT_GRAL      = formatAmount(item.ZZTOT_GRAL);
-
+                
+                if(item.ZZCDEUDA == 0)
+                {
+                    item.MWSKZ = '';
+                    item.ZZCDEUDA = '';
+                }
                 items.push(item);
 
                 exist = true;
