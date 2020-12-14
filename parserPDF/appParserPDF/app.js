@@ -40,7 +40,7 @@ app.route('/EstadoCuenta')
 
     // Formatea la impresión
     var options = {
-        format: "A3", //Prueba
+        format: "A3", // Cambio de formato
         orientation: "landscape",
         base:"file:///" + __dirname + "/",
         border: {
