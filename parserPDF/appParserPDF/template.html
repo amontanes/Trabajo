@@ -21,7 +21,6 @@
     
     .tabletop{
       border: 0px;
-      width: 1000px;
       font-family:Arial, sans-serif;
       font-size:11px;
 
@@ -57,10 +56,6 @@
       font-size:8px;
     }
 
-    tr{
-
-    }
-
     .tdbreak{
       border-right:1px transparent;
       border-left:1px transparent;
@@ -79,18 +74,16 @@
             padding:10px 5px;
             word-break:normal;
             
-            }
-
-    #pageFooter:after {
-            counter-increment: page;
-            content: counter(page);
-            }
+            }          
     </style>
 
-<table class="tabletop" width=800px>
+
+<div id="content">
+  <div id="pageFooter">Page </div>
+<table class="tabletop">
     <tr>
       <td width= 100px rowspan="3"><div></div><img  width="50" height="50" src="data:image/png;base64,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"/></div></td>
-      <td class="tdcenter" width= 700px rowspan="3">ESTADO DE CUENTA <br>Detalle por CUENTA CONTRATO</td>
+      <td class="tdcenter" width= 900px rowspan="3"> ESTADO DE CUENTA <br> Detalle por CUENTA CONTRATO </td>
       <td class="tddynamic" width= 40px >Fecha:</th>
       <td class="tddynamic" width= 40px >{{date.fecha}}</th>
     </tr>
@@ -130,25 +123,25 @@
   <tr>
     <td width="150px" class="tdtitle td">Cuenta Contrato </td>
     <td width="200px" class="tdtitle td">Nombre Cuenta Contrato</td>
-    <td width="550px" class="tdtitle td"colspan="3">Dirección inmueble</td>
+    <td width="350px" class="tdtitle td"colspan="3">Dirección inmueble</td>
     <td width="200px" class="tdtitle td">Saldo Cuenta</th>
   </tr>
   <tr>
     <td width="150px">{{account.VKONT}}</td>
     <td width="200px">{{account.VKBEZ}}</td>
-    <td width="550px" colspan="3">{{account.ZZDIRECCION}}</td>
+    <td width="350px" colspan="3">{{account.ZZDIRECCION}}</td>
     <td width="200px">{{account.ZZSALDO_CTA}}</td>
   </tr>
   <tr>
     <td width="150px" class="tdtitle">Categoría</td>
-    <td width="550px" class="tdtitle" colspan="2">Condición IVA</td>
+    <td width="350px" class="tdtitle" colspan="2">Condición IVA</td>
     <td width="100px" class="tdtitle">Número CUIT</td>
     <td width="100px" class="tdtitle">Condición IIBB</td>
     <td width="200px" class="tdtitle">Estado de Servicio</td>
   </tr>
   <tr>
     <td width="150px">{{account.KTOTX}}</td>
-    <td width="550px" colspan="2">{{account.ZZIVA}}</td>
+    <td width="350px" colspan="2">{{account.ZZIVA}}</td>
     <td width="100px">{{account.ZZCUIT}}</td>
     <td width="100px">{{account.ZZING_BRUTOS}}</td>
     <td width="200px">{{account.ZZEST_SERVICIO}}</td>
@@ -365,5 +358,4 @@
       {{/each}}
     </table>
 
-
-
+  </div>
