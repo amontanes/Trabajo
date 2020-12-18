@@ -221,7 +221,6 @@ app.use(function(req, res, next) {
                 
                 if(item.ZZCDEUDA == 0)
                 {
-                    item.MWSKZ = '';
                     item.ZZCDEUDA = '';
                 }
                 items.push(item);
